@@ -1,5 +1,5 @@
 /* config.h.  Generated from config.h.in by configure.  */
-/* config.h.in.  Generated from configure.in by autoheader.  */
+/* config.h.in.  Generated from configure.ac by autoheader.  */
 
 /* Define if building universal (internal helper macro) */
 /* #undef AC_APPLE_UNIVERSAL_BUILD */
@@ -13,7 +13,7 @@
 /* Define to 1 if chown modifies symlinks. */
 /* #undef CHOWN_MODIFIES_SYMLINK */
 
-/* Undefine if you don't want locale features. By default this is defined. */
+/* Undefine if you do not want locale features. By default this is defined. */
 /* #undef CONFIG_LOCALE */
 
 /* Define to one of `_getb67', `GETB67', `getb67' for Cray-2 and Cray-YMP
@@ -234,7 +234,6 @@
 #define HAVE_MALLINFO 1
 
 /* Define to 1 if you have the <malloc.h> header file. */
-#undef HAVE_MALLOC_H
 #define HAVE_MALLOC_H 1
 
 /* Define to 1 if you have the <mcheck.h> header file. */
@@ -266,6 +265,12 @@
 
 /* Define to 1 if you have the <netdb.h> header file. */
 #define HAVE_NETDB_H 1
+
+/* Define to 1 if you have the <netinet/in_systm.h> header file. */
+#define HAVE_NETINET_IN_SYSTM_H 1
+
+/* Define to 1 if you have the <netinet/ip.h> header file. */
+#define HAVE_NETINET_IP_H 1
 
 /* Define to 1 if you have the `nl_langinfo' function. */
 /* #undef HAVE_NL_LANGINFO */
@@ -304,7 +309,7 @@
 /* #undef HAVE_REMSH */
 
 /* Define to 1 if mkstemp() is available and works right */
-#define HAVE_SECURE_MKSTEMP 1
+/* #undef HAVE_SECURE_MKSTEMP */
 
 /* Define to 1 if you have the `setattrlist' function. */
 /* #undef HAVE_SETATTRLIST */
@@ -402,7 +407,7 @@
 /* Define to 1 if the system has the type `struct stat64'. */
 #define HAVE_STRUCT_STAT64 1
 
-/* Define to 1 if `st_rdev' is member of `struct stat'. */
+/* Define to 1 if `st_rdev' is a member of `struct stat'. */
 #define HAVE_STRUCT_STAT_ST_RDEV 1
 
 /* Define to 1 if you have the "struct utimbuf" type */
@@ -459,7 +464,7 @@
 /* #undef HAVE_SYS_UNISTD_H */
 
 /* Define to 1 if you have the <sys/un.h> header file. */
-#define HAVE_SYS_UN_H 1
+/* #undef HAVE_SYS_UN_H */
 
 /* Define to 1 if you have the <sys/wait.h> header file. */
 #define HAVE_SYS_WAIT_H 1
@@ -482,6 +487,9 @@
 /* Define to 1 if you have the `utime' function. */
 #define HAVE_UTIME 1
 
+/* Define to 1 if you have the `utimensat' function. */
+/* #undef HAVE_UTIMENSAT */
+
 /* Define to 1 if you have the `utimes' function. */
 #define HAVE_UTIMES 1
 
@@ -489,7 +497,7 @@
 #define HAVE_UTIME_H 1
 
 /* Define to 1 if `utime(file, NULL)' sets file's timestamp to the present. */
-/* #undef HAVE_UTIME_NULL */
+#define HAVE_UTIME_NULL 1
 
 /* Define to 1 if you have the `vasprintf' function. */
 #define HAVE_VASPRINTF 1
@@ -554,6 +562,15 @@
 /* unprivileged user--e.g. nobody */
 #define NOBODY_USER "nobody"
 
+/* True if device files do not support xattrs */
+/* #undef NO_DEVICE_XATTRS */
+
+/* True if special files do not support xattrs */
+/* #undef NO_SPECIAL_XATTRS */
+
+/* True if symlinks do not support xattrs */
+/* #undef NO_SYMLINK_XATTRS */
+
 /* Define to the address where bug reports for this package should be sent. */
 #define PACKAGE_BUGREPORT ""
 
@@ -565,6 +582,9 @@
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME ""
+
+/* Define to the home page for this package. */
+#define PACKAGE_URL ""
 
 /* Define to the version of this package. */
 #define PACKAGE_VERSION ""
@@ -582,7 +602,7 @@
 #define RSYNC_RSH "ssh"
 
 /* rsync release version */
-#define RSYNC_VERSION "3.0.7"
+#define RSYNC_VERSION "3.0.9"
 
 /* Define to 1 if sockets need to be shutdown */
 /* #undef SHUTDOWN_ALL_SOCKETS */
@@ -664,6 +684,11 @@
 # endif
 #endif
 
+/* Enable large inode numbers on Mac OS X 10.5.  */
+#ifndef _DARWIN_USE_64_BIT_INODE
+# define _DARWIN_USE_64_BIT_INODE 1
+#endif
+
 /* Number of bits in a file offset, on hosts where this is settable. */
 /* #undef _FILE_OFFSET_BITS */
 
@@ -681,6 +706,9 @@
 #ifndef __cplusplus
 /* #undef inline */
 #endif
+
+/* Define to `unsigned int' if <sys/types.h> does not define. */
+/* #undef size_t */
 
 /* type to use in place of socklen_t if not defined */
 /* #undef socklen_t */
