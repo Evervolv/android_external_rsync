@@ -234,6 +234,7 @@
 #define HAVE_MALLINFO 1
 
 /* Define to 1 if you have the <malloc.h> header file. */
+#undef HAVE_MALLOC_H
 #define HAVE_MALLOC_H 1
 
 /* Define to 1 if you have the <mcheck.h> header file. */
@@ -309,7 +310,7 @@
 /* #undef HAVE_REMSH */
 
 /* Define to 1 if mkstemp() is available and works right */
-/* #undef HAVE_SECURE_MKSTEMP */
+#define HAVE_SECURE_MKSTEMP 1
 
 /* Define to 1 if you have the `setattrlist' function. */
 /* #undef HAVE_SETATTRLIST */
@@ -464,7 +465,7 @@
 /* #undef HAVE_SYS_UNISTD_H */
 
 /* Define to 1 if you have the <sys/un.h> header file. */
-/* #undef HAVE_SYS_UN_H */
+#define HAVE_SYS_UN_H 1
 
 /* Define to 1 if you have the <sys/wait.h> header file. */
 #define HAVE_SYS_WAIT_H 1
