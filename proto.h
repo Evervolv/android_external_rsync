@@ -89,7 +89,7 @@ struct file_struct *make_file(const char *fname, struct file_list *flist,
 void unmake_file(struct file_struct *file);
 void send_extra_file_list(int f, int at_least);
 struct file_list *send_file_list(int f, int argc, char *argv[]);
-struct file_list *recv_file_list(int f);
+struct file_list *recv_file_list(int f, int dir_ndx);
 void recv_additional_file_list(int f);
 int flist_find(struct file_list *flist, struct file_struct *f);
 int flist_find_ignore_dirness(struct file_list *flist, struct file_struct *f);
@@ -348,7 +348,7 @@ uid_t recv_user_name(int f, uid_t uid);
 gid_t recv_group_name(int f, gid_t gid, uint16 *flags_ptr);
 void recv_id_list(int f, struct file_list *flist);
 void parse_name_map(char *map, BOOL usernames);
-const char *getallgroups(uid_t uid, gid_t *gid_list, int *size_ptr);
+const char *getallgroups(uid_t uid, item_list *gid_list);
 void set_nonblocking(int fd);
 void set_blocking(int fd);
 int fd_pair(int fd[2]);

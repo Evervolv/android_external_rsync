@@ -11,6 +11,7 @@ config.h.in
 config.h.in.old
 config.log
 config.status
+aclocal.m4
 /proto.h-tstamp
 /rsync.1
 /rsyncd.conf.5
@@ -41,3 +42,4 @@ config.status
 /testsuite/devices-fake.test
 /testsuite/xattrs-hlink.test
 /patches
+.deps
