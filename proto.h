@@ -107,7 +107,7 @@ void itemize(const char *fnamecmp, struct file_struct *file, int ndx, int statre
 	     const char *xname);
 int unchanged_file(char *fn, struct file_struct *file, STRUCT_STAT *st);
 int atomic_create(struct file_struct *file, char *fname, const char *slnk, const char *hlnk,
-		  dev_t rdev, stat_x *sxp, int del_for_flag);
+		  DEV_T rdev, stat_x *sxp, int del_for_flag);
 void check_for_finished_files(int itemizing, enum logcode code, int check_redo);
 void generate_files(int f_out, const char *local_name);
 struct hashtable *hashtable_create(int size, int key64);
@@ -388,6 +388,7 @@ void bitbag_set_bit(struct bitbag *bb, int ndx);
 void bitbag_clear_bit(struct bitbag *bb, int ndx);
 int bitbag_check_bit(struct bitbag *bb, int ndx);
 int bitbag_next_bit(struct bitbag *bb, int after);
+int flist_find_name(struct file_list *flist, const char *fname, int want_dir_match);
 void flist_ndx_push(flist_ndx_list *lp, int ndx);
 int flist_ndx_pop(flist_ndx_list *lp);
 void *expand_item_list(item_list *lp, size_t item_size,
