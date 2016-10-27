@@ -1942,7 +1942,7 @@ static void recv_generator(char *fname, struct file_struct *file, int ndx,
  * Specify 0 for the del_for_flag if there is not a file to replace.  This
  * returns 1 on success and 0 on failure. */
 int atomic_create(struct file_struct *file, char *fname, const char *slnk, const char *hlnk,
-		  dev_t rdev, stat_x *sxp, int del_for_flag)
+		  DEV_T rdev, stat_x *sxp, int del_for_flag)
 {
 	char tmpname[MAXPATHLEN];
 	const char *create_name;
